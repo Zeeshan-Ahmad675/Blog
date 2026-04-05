@@ -1,0 +1,871 @@
+/* General setup */
+* {
+    box-sizing: border-box;
+    scroll-margin-top: 100px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: hsl(0, 0%, 100%);
+}
+
+p{
+    line-height: 1.5;
+}
+
+.norli{
+    margin: 1em;
+    padding-left: 40px;
+    list-style-position: outside;
+    list-style-type: circle;
+    line-height: 1.5;
+}
+
+mjx-container[display="true"] {
+    font-size: 110% !important;
+    text-align: left !important;
+    margin-left: 6% !important;
+    padding: 20px;
+    max-width: 100% !important;
+    display: block;
+    scrollbar-width: thin;
+    scrollbar-color: darkgray transparent;
+}
+
+mjx-container[display="true"]::-webkit-scrollbar {
+    height: 8px;
+}
+
+mjx-container[display="true"]::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    border-radius: 4px;
+}
+
+mjx-mtable {
+    text-align: left !important;
+    margin-left: 10px;
+}
+
+
+main{
+    width: 70%;
+    justify-self: center;
+    z-index: 10px;
+    /* background-color: #ffffff; */
+    padding: 19px;
+    /* box-shadow: 0 0 4px black; */
+    box-shadow : 0 0 4px black;
+}
+main span{
+    color: black;
+}
+
+
+
+
+/* Header and nav bar */
+
+header{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    height: 56px;
+    z-index: 1000;
+    box-shadow: 0 0 8px black;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+#logo{
+    cursor: pointer;
+}
+#name{
+    padding-left: 8px;
+    font-family: "Times New Roman";
+    cursor: pointer;
+}
+
+#lona{
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+    padding: 6px;
+}
+/* #lona:hover{
+    background-color: rgba(164, 163, 163, 0.477);
+} */
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 60%;
+    max-width: 600px;
+    right: 0;
+    z-index: 3;
+}
+.nav-item{
+    padding: 18px;
+}
+#navchap{
+    z-index: 1000;
+    position: relative;
+}
+#chapterlist{
+    display: none;
+    width: 180px;
+    position: absolute;
+    font-size: small;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    right: -40%;
+    margin-top: 1px;
+    overflow: hidden;
+}
+#chapterlist div{
+    padding: 15px;
+    /* border-bottom: 1px solid black; */
+}
+#chapterlist a:not(:last-child) {
+    display: block;
+    border-bottom: 1px solid black;
+}
+#navchap:hover div{
+    display: block;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+nav div:hover{
+    background-color: rgba(153, 152, 152, 0.477);
+    color: hsl(170, 100%, 50%);
+}
+nav a.active {
+    background-color: rgba(224, 216, 216, 0.477);
+}
+
+#navbar{
+    display: none;
+    cursor: pointer;
+}
+#navclo{
+    display: none;
+    cursor: pointer;
+}
+.navdiv{
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px;
+}
+
+
+
+
+
+/* Mode toggle button */
+
+/* #fixedmodediv{
+    position: fixed;
+    top: 65px;
+    right: 20px;
+    z-index: 20;
+    cursor: pointer;
+}
+#modediv{
+    background-color: black;
+    width: 45px;
+    height: 25px;
+    z-index: 20px;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 0;
+} */
+#modebut{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border: 3px solid black;
+    border-radius: 25px;
+    /* position: absolute; */
+    left: 0;
+    top: 0;
+    /* margin: 0; */
+    box-shadow: 0 0px 5px grey;
+    text-align: center;
+    font-size: 12px;
+}
+#sun{
+    justify-self: center;
+    /* margin-top: 4px ; */
+    color: orange;
+}
+#moon{
+    justify-self: center;
+    /* margin-top: 4px;  */
+    color: #ffffff;
+}
+
+
+
+
+/* Light theme styles */
+[data-theme="light"] {
+    background-color: #fafafa;
+    color: black;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] {
+    background-color: hsl(200, 2%, 30%);
+    color: white;
+}
+
+
+
+
+
+
+/* Main Content */
+
+#downloadBtn{
+    font-size: 15px;
+    background-color: hsl(195, 79%, 52%);
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 8px hsl(195, 79%, 32%);
+    display: flex;
+    align-items: center;
+}
+#downloadBtn a{
+    color: white;
+    text-decoration: none;
+}
+#downloadBtn:hover{
+    background-color: hsl(195, 79%, 42%);
+}
+#downloadBtn:active{
+    background-color: hsl(195, 79%, 32%);
+}
+
+
+
+/* #mainfnav:hover>ol{
+    display: block;
+} */
+#mainfnav{
+    display: inline-block;
+    position: fixed;
+    top: 60px;
+    left: 2%;
+    z-index: 2;
+    font-size: 0.8em;
+}
+
+#bfnav div{
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 3px;
+}
+#bfnav{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 2px;
+    background-color: white;
+    cursor:pointer;
+}
+#bfnav:hover{
+    background-color: hsl(0, 0%, 95%);
+    box-shadow: 0 0 2px black;
+}
+#bfnav:active{
+    background-color: hsl(0, 0%, 85%);
+    box-shadow: 0 0 2px black;
+}
+
+
+#bfnavi{
+    display: none;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 0 0 2px black;
+    padding: 4px;
+}
+#bfnavi li{
+    list-style-type: none;
+}
+#bfnavi li{
+    padding: 2px;
+    margin: 2px;
+}
+#bfnavi>li{
+    border: 2px solid black;
+}
+#bfnavi a{
+    color: black;
+}
+#bfnavi li li:hover{
+    background-color: hsl(0, 0%, 95%);
+    text-decoration: underline;
+}
+#bfnavi li li:hover a{
+    color:hsl(230, 77%, 48%);
+}
+
+
+main a:visited{
+    color: hsl(263, 93%, 66%);
+}
+
+
+main{
+    margin: 8px auto;
+}
+
+
+@keyframes welcome{
+    65%{opacity:1}
+}
+#welh4{
+    opacity: 0;
+    animation-name: welcome;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+#divgrid{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(317px,1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+.chbox{
+    /* border: 2px solid black;
+    box-shadow: 0px 0px 3px black; */
+    padding: 8px;
+    text-align: center;
+}
+.chbox img{
+    width: 150px;
+    margin-bottom: 6px;
+    background: white;
+}
+.chbox:hover{
+    scale: 1.02;
+    /* background-color: hsl(180, 100%, 98%); */
+}
+
+#divgrid a{
+    text-decoration: none;
+    color: black;
+}
+#divgrid a:hover{
+    text-decoration: underline;
+    color: hsl(214, 100%, 50%);
+}
+
+
+
+
+
+
+/* Footer */
+
+footer{
+    background-color: black;
+    height: auto;
+    color: white;
+    padding: 8px;
+    box-shadow: 0 0 8px black;
+}
+footer a{
+    color: hsl(170, 100%, 50%);
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+/* footer p{
+    align-self: center;
+    padding-left: 10px;
+    text-shadow: 0 0 1px white;
+} */
+
+#footdiv{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/* Chapter specific styling */
+
+.imgdiv{
+    overflow: auto;
+}
+.imgdiv {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray transparent;
+}
+.imgdiv::-webkit-scrollbar {
+  height: 8px;
+}
+.imgdiv::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 4px;
+}
+
+.tablediv{
+    overflow: auto;
+}
+.tablediv {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray transparent;
+}
+.tablediv::-webkit-scrollbar {
+  height: 8px;
+}
+.tablediv::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+  border-radius: 4px;
+}
+
+/* .exdiv{
+    background-color: hsl(0, 0%, 65%);
+    padding: 10px;
+    border: 3px solid hsl(0, 0%, 45%);
+    border-radius: 10px;
+    color: black;
+    clear: both;
+}
+.exdiv a{
+    color: hsl(0, 0%, 100%) !important;
+}
+.exdiv a:visited{
+    color: hsl(268, 86%, 49%) !important;
+} */
+
+/* .bfnavitestli{
+    list-style-position: outside ;margin-block-start: 0.2em; margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;padding-inline-start: 40px; list-style-type: lower-roman
+} */
+
+
+
+
+
+
+
+
+/* Loading Bar */
+
+body.loading {
+  overflow: hidden;
+}
+
+#loader{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(255, 255, 255, 0.8); */
+    z-index: 2000;
+}
+
+#mloader{
+    width: 260px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: 0 0 8px black; */
+    border-radius: 5px;
+    /* background: white; */
+}
+
+.spinner {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid hsl(199, 70%, 53%);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+#loaderLogo{
+    position: absolute;
+}
+
+#loaderLogo {
+    position: absolute;
+    animation: spin 1s linear reverse infinite;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Tools */
+
+/* Euler Angles Calculator */
+
+
+.ea_calculator{
+    /* min-width: 400px; */
+    max-width: 800px;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    /* font-size: large; */
+    box-shadow: 0 0 6px black;
+    border-radius: 10px;
+    align-self: center;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: hsla(0, 0%, 97%, 1.00);
+}
+
+.ea_calculator button{
+    margin-top: 10px;
+    padding: 8px;
+    width: auto;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4em;
+    color: white;
+    background-color: hsl(203, 100%, 50%);
+    box-shadow: 0 0 4px hsl(203, 100%, 50%);
+    cursor: pointer;
+}
+.ea_calculator button:hover{
+    background-color: hsl(203, 100%, 40%);
+    box-shadow: 0 0 4px hsl(203, 100%, 40%);
+}
+.ea_calculator button:active{
+    background-color: hsl(203, 100%, 30%);
+    box-shadow: 0 0 4px hsl(203, 100%, 30%);
+}
+
+.ea_calculator input {
+    padding: 12px 16px;
+    width: 200px;
+    border: 2px solid #d0d7de;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.08);
+    margin: 5px;
+}
+
+.ea_calculator input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 4px hsla(212, 72%, 59%, 0.15);
+    background-color: #ffffff;
+}
+
+.ea_calculator input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none; /* Standard property */
+  /* margin: 0; */
+}
+
+/* Remove arrows in Firefox */
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox-specific */
+  appearance: textfield;      /* Standard property */
+}
+
+
+
+#ea_convention{
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 4px;
+    border: 2px solid #d0d7de;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#ea_convention:focus{
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 4px hsla(212, 72%, 59%, 0.15);
+    background-color: #ffffff;
+}
+
+
+/* #ea_display{
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.3em;
+    margin: 10px auto;
+} */
+
+
+#ea_display {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    background-color: hsl(210, 17%, 98%); /* light gray background */
+    border: 1px solid hsl(0, 0%, 87%);
+    font-size: 1.2rem;
+    text-align: center;
+    color: hsl(0, 0%, 20%);
+    min-height: 2.5rem; /* keeps box from collapsing when empty */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* overflow: auto; */
+}
+
+#ea_display:empty {
+    border: none;
+    background: transparent;
+    height: 0;
+}
+
+#ea_display.success {
+    background-color: hsl(137, 100%, 95%); /* light green */
+    border-color: hsl(114, 58%, 77%);
+    color: hsl(123, 40%, 20%);
+}
+
+#ea_display.warning {
+    background-color: hsl(48, 100%, 96%);  /* light yellow */
+    border: 1px solid hsl(48, 85%, 77%);   /* soft golden border */
+    color: hsl(48, 85%, 24%); 
+}
+
+#ea_display.error {
+    background-color: hsl(0, 100%, 96%); /* light red */
+    border-color: hsl(0, 58%, 77%);
+    color: hsl(0, 58%, 24%);
+}
+
+#ea_display.loading {
+    background-color: hsl(210, 100%, 96%); /* light blue */
+    border-color: hsl(210, 60%, 80%);
+    color: hsl(210, 60%, 25%);
+}
+
+
+
+
+
+/* Animations for nav and header and download-Heading*/
+
+@keyframes anime{
+    from{transform: translateX(-100%)}
+    0%{opacity: 0}
+}
+
+
+
+@keyframes clo1{
+    from{transform: rotateZ(0deg)}
+}
+@keyframes clo2{
+    0%{opacity: 1}
+}
+@keyframes clo3{
+    from{transform: rotateZ(0deg)}
+}
+
+
+
+@keyframes bar1{
+    from{transform: rotateZ(45deg) translateY(8.5px)}
+}
+@keyframes bar2{
+    0%{opacity: 0}
+}
+@keyframes bar3{
+    from{transform: rotateZ(-45deg) translateY(-8.5px)}
+}
+
+
+
+
+
+@media screen and (max-width: 826px){
+
+    /* General setup */
+
+    h1, h2, h3, .infobox, .navbox {
+        font-family: Arial, "Helvetica Neue", sans-serif;
+    }
+    /* body {
+        font-family: "Linux Libertine", Georgia, "Times New Roman", Times, serif;
+    } */
+    
+    main{
+        width: 95%;
+    }
+
+    /* Header and nav reponsiveness */
+    header{
+        display: block;
+    }
+
+    #logo{
+        display: none;
+    }
+    #name{
+        padding: 12px;
+    }
+    #name:hover{
+        background-color:  rgba(153, 152, 152, 0.477);
+
+    }
+    #lona{
+        /* justify-content: ; */
+        margin: 0;
+    }
+    #lona:hover{
+        background-color: initial;
+    }
+
+    nav{
+        display: none;
+        height: 1900px;
+        width: 250px;
+        position: fixed;
+        left: 0;
+        z-index: 10px;
+        color: white;
+        text-align: center;
+        animation-name: anime;
+        animation-duration: 1s;
+    }
+    #navchap:hover #chapterlist{
+        display: none;
+    }
+    #navbar{
+        display: block;
+        padding: 11px;
+    }
+    #navbar:active .navdiv{
+        background-color:  hsl(170, 100%, 50%);
+    }
+    #navclo{
+        display: none;
+        padding: 11px;
+    }
+    #navclo:active .navdiv{
+        background-color:  hsl(170, 100%, 50%);
+    }
+    #navclo1{
+        transform: rotateZ(45deg) translateY(8.5px);
+        animation-name: clo1;
+        animation-duration: 1s;
+    }
+    #navclo2{
+        opacity:0;
+        animation-name: clo2;
+        animation-duration: 1s;
+    }
+    #navclo3{
+        transform: rotateZ(-45deg) translateY(-8.5px);
+        animation-name: clo3;
+        animation-duration: 1s;
+    }
+    #navbar1{
+        animation-name: bar1;
+        animation-duration: 1s;
+    }
+    #navbar2{
+        opacity: 1;
+        animation-name: bar2;
+        animation-duration: 1s;
+    }
+    #navbar3{
+        animation-name: bar3;
+        animation-duration: 1s;
+    }
+    #footdiv{
+        flex-direction: column;
+        align-items: center;
+    }
+    .c1fdiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: ; */
+        /* align-items: center; */
+    }
+    .c1fdiv p{
+        margin-left: 25px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .c1fdiv > p{
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    .c2fdiv{
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+
+
+    /* Euler Angles Calculator */
+    #ea_display{
+        overflow: auto;
+    }
+}
+

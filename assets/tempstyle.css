@@ -1,0 +1,124 @@
+#title-block-div {
+  width: 100%;
+  margin: 0 0 1.1rem;
+  padding: 1.2rem 1.3rem 1.05rem;
+  border: 1px solid hsl(0, 0%, 88%);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  background: hsl(0, 0%, 100%);
+}
+
+#title-block-div .title {
+  margin: 0;
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+#title-block-div .subtitle {
+  margin: 0.52rem 0 0;
+  font-size: clamp(1.03rem, 2vw, 1.22rem);
+  line-height: 1.5;
+  opacity: 0.84;
+}
+
+#title-block-div .author,
+#title-block-div .date,
+#title-block-div .last_updated {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  opacity: 0.76;
+}
+
+#title-block-div .date,
+#title-block-div .last_updated {
+  display: inline-block;
+  margin-right: 1.8rem;
+  margin-top: 0.45rem;
+}
+
+#title-block-div .author + .author {
+  margin-top: 0.2rem;
+}
+
+#title-block-div .abstract {
+  margin-top: 0.95rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid hsl(0, 0%, 90%);
+  border-radius: 6px;
+  background: hsl(0, 0%, 99%);
+}
+
+#title-block-div .abstract-title {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+[role="doc-toc"] {
+  width: 100%;
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid hsl(0, 0%, 89%);
+  border-radius: 6px;
+  background: hsl(0, 0%, 99%);
+}
+
+[role="doc-toc"] > h2 {
+  margin: 0 0 0.55rem;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+}
+
+[role="doc-toc"] ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+[role="doc-toc"] li {
+  margin: 0.26rem 0;
+  line-height: 1.5;
+}
+
+[role="doc-toc"] a {
+  color: #0052CC;
+  text-decoration: none;
+}
+
+[role="doc-toc"] a:hover {
+  text-decoration: underline;
+}
+
+[role="doc-toc"] a:visited {
+  color: #6F42C1;
+}
+
+[data-theme="dark"] #title-block-div {
+  background: hsl(200, 2%, 24%);
+  border-color: hsl(0, 0%, 34%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="dark"] [role="doc-toc"] {
+  background: hsl(200, 2%, 25%);
+  border-color: hsl(0, 0%, 34%);
+}
+
+[data-theme="dark"] #title-block-div .abstract {
+  background: hsl(200, 2%, 22%);
+  border-color: hsl(0, 0%, 32%);
+}
+
+@media screen and (max-width: 826px) {
+  #title-block-div {
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  [role="doc-toc"] {
+    padding: 0.8rem 0.95rem;
+    border-radius: 6px;
+  }
+}
